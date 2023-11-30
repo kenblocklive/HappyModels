@@ -38,13 +38,17 @@
       const selectedHours = +selectElement.value;
       if (selectedHours === 90) {
         const result = (total / 100) * 5 * +course;
-        divContainer.innerText = `${result} рубля(лей)`;
+        divContainer.innerText = `${
+          Math.floor(Math.floor(result) / 100) * 100
+        } ₽`;
         inputValue.value = null;
         inputCourse.value = null;
         return result;
       } else {
         const result = (total / 100) * 10 * +course;
-        divContainer.innerText = `${Math.floor(result)} рубля(лей)`;
+        divContainer.innerText = `${
+          Math.floor(Math.floor(result) / 100) * 100
+        } ₽`;
         inputValue.value = null;
         inputCourse.value = null;
         return result;

@@ -38,7 +38,7 @@
       const selectedHours = +selectElement.value;
       if (selectedHours === 90) {
         const result = (total / 100) * 5 * +course;
-        divContainer.innerText = `${
+        divContainer.innerText = `Твой бонус: ${
           Math.floor(Math.floor(result) / 100) * 100
         } ₽`;
         inputValue.value = null;
@@ -46,7 +46,7 @@
         return result;
       } else {
         const result = (total / 100) * 10 * +course;
-        divContainer.innerText = `${
+        divContainer.innerText = `Твой бонус: ${
           Math.floor(Math.floor(result) / 100) * 100
         } ₽`;
         inputValue.value = null;

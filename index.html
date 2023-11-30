@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <label for="hours">Выбери свою выработку</label>
+      <select class="input" id="hours" name="hours">
+        <option value="90">90 часов +5%</option>
+        <option value="110">110 часов +10%</option>
+      </select>
+      <label for="course">Введи курс доллара</label>
+      <input id="course" class="input" placeholder="Введи курс $" />
+      <label for="value">Введи свой заработок</label>
+      <input id="value" class="input" placeholder="Введи заработок" />
+
+      <button
+        onclick="checkTotal(inputValue.value,inputCourse.value)"
+        id="button"
+        class="button"
+      >
+        Посчитать
+      </button>
+      <h1></h1>
+    </div>
+  </body>
+  <script>
+    const inputValue = document.querySelector("#value");
+    const divContainer = document.getElementsByTagName("h1")[0];
+    const inputCourse = document.querySelector("#course");
+
+    function checkTotal(total, course) {
+      const selectElement = document.getElementById("hours");
+      const selectedHours = +selectElement.value;
+      if (selectedHours === 90) {
+        const result = (total / 100) * 5 * +course;
+        divContainer.innerText = `${result} рубля(лей)`;
+        inputValue.value = null;
+        inputCourse.value = null;
+        return result;
+      } else {
+        const result = (total / 100) * 10 * +course;
+        divContainer.innerText = `${Math.floor(result)} рубля(лей)`;
+        inputValue.value = null;
+        inputCourse.value = null;
+        return result;
+      }
+    }
+  </script>
+</html>

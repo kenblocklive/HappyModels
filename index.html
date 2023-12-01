@@ -29,6 +29,8 @@
         Посчитать
       </button>
       <h1></h1>
+      <h1 id="pay"></h1>
+      <h1 id="total"></h1>
     </div>
   </body>
   <script>
@@ -37,6 +39,7 @@
     document.body.insertBefore(div, document.body.firstChild);
     const inputValue = document.querySelector("#value");
     const divContainer = document.getElementsByTagName("h1")[0];
+    const pay = document.querySelector("#pay");
     const inputCourse = document.querySelector("#course");
 
     function checkTotal(total, course) {
@@ -44,16 +47,24 @@
       const selectedHours = +selectElement.value;
       if (selectedHours === 90) {
         const result = (total / 100) * 5 * +course;
+        const payResult = (total / 100) * 55 * +course;
         divContainer.innerText = `Твой бонус: ${
           Math.floor(Math.floor(result) / 100) * 100
+        } ₽`;
+        pay.innerText = `Твоя Зарплата: ${
+          Math.floor(Math.floor(payResult) / 100) * 100
         } ₽`;
         inputValue.value = null;
         inputCourse.value = null;
         return result;
       } else {
         const result = (total / 100) * 10 * +course;
+        const payResult = (total / 100) * 60 * +course;
         divContainer.innerText = `Твой бонус: ${
           Math.floor(Math.floor(result) / 100) * 100
+        } ₽`;
+        pay.innerText = `Твоя Зарплата: ${
+          Math.floor(Math.floor(payResult) / 100) * 100
         } ₽`;
         inputValue.value = null;
         inputCourse.value = null;

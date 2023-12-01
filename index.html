@@ -8,15 +8,14 @@
   </head>
   <body>
     <div class="page-container">
-      <label for="hours">Выбери свою выработку</label>
       <select class="input" id="hours" name="hours">
-        <option value="90">90 часов +5%</option>
-        <option value="110">110 часов +10%</option>
+        <option value="90">Выработка 90 часов +5%</option>
+        <option value="110">Выработка 110 часов +10%</option>
       </select>
-      <label for="course">Введи курс доллара</label>
-      <input id="course" class="input" />
-      <label for="value">Введи свой заработок</label>
-      <input id="value" class="input" />
+
+      <input placeholder="Введи курс доллара" id="course" class="input" />
+
+      <input placeholder="Введи свой заработок" id="value" class="input" />
 
       <button
         onclick="checkTotal(inputValue.value,inputCourse.value)"
@@ -29,6 +28,9 @@
     </div>
   </body>
   <script>
+    var div = document.createElement("div");
+    div.innerHTML = '<div class="garland_image"></div>';
+    document.body.insertBefore(div, document.body.firstChild);
     const inputValue = document.querySelector("#value");
     const divContainer = document.getElementsByTagName("h1")[0];
     const inputCourse = document.querySelector("#course");

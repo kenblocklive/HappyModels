@@ -2,9 +2,10 @@
   font-family: "Inter", sans-serif;
   color: #444444;
   box-sizing: border-box;
+  background-image: url(./newyear.jpeg);
+  background-position: bottom;
 }
 
-html,
 body {
   margin: 0;
   padding: 0;
@@ -31,7 +32,6 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f8f8f8;
 }
 
 .content-container {
